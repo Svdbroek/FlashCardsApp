@@ -8,8 +8,14 @@ const categories = {
         ['Latest album by The Crown?','Cobra Speed Venom'],
         ['Latest album by Fleshgod Apocalypse','Veleno'],
         ['most awesome song by Mysticum?','The Aether']
+    ],
+    physics : [
+        ['Who defined the first law of motion?','Sir Isaac Newton'],
+        ['By what process does a star generate energy?','Nuclear Fusion'],
+        ['What is the first law of thermodynemics?','totalenergy must always be preserved'],
     ]
 }
+
 
 /*
 const questionList = [
@@ -25,9 +31,8 @@ let questionPair
 
 //funcion needs argument as follows : categories.NameOfCategory
 let categoryPicker =(pickCategory)=>{
-     questionList = (pickCategory)
-     console.log(pickCategory)
-     console.log(questionList)
+    questionList = (pickCategory)
+    newQuestion();
 }
 
 let newQuestion =()=> {
@@ -51,6 +56,10 @@ let addQuestion =(submitQ,submitA) =>{
     // console.log(subimtQ + submitA) sanitycheck
     console.log(questionList)
  }
+
+deleteQuestion = ()=>{
+    questionList.splice(questionPair,1)
+}
 
 
 newQuestion();  
