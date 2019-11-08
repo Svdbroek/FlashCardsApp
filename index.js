@@ -1,15 +1,38 @@
-const categories = {
-    javascript : [
-        ['What is an Array?', 'a collection variable used to store any kind of var in a list'],
-        ['What is an Object?', 'a collection var used to store any kind of var behind a key'],
-        ['seven times seven =?', '49']
-    ] ,
-    deathMetal : [
-        ['Latest album by The Crown?','Cobra Speed Venom'],
-        ['Latest album by Fleshgod Apocalypse','Veleno'],
-        ['most awesome song by Mysticum?','The Aether']
-    ]
-}
+let categories 
+
+let initialize = () => {
+  if (localStorage === null) {
+      categories= {
+        javascript: [
+          [
+            "What is an Array?",
+            "a collection variable used to store any kind of var in a list"
+          ],
+          [
+            "What is an Object?",
+            "a collection var used to store any kind of var behind a key"
+          ],
+          ["seven times seven =?", "49"]
+        ],
+        deathMetal: [
+          ["Latest album by The Crown?", "Cobra Speed Venom"],
+          ["Latest album by Fleshgod Apocalypse", "Veleno"],
+          ["most awesome song by Mysticum?", "The Aether"]
+        ],
+        physics: [
+          ["Who defined the first law of motion?", "Sir Isaac Newton"],
+          ["By what process does a star generate energy?", "Nuclear Fusion"],
+          [
+            "What is the first law of thermodynemics?",
+            "totalenergy must always be preserved"
+          ]
+        ]
+      };
+  } else {
+    categories = JSON.parse(localStorage.getItem("database"));
+    console.log(categories)
+  }
+};
 
 /*
 const questionList = [
@@ -18,24 +41,24 @@ const questionList = [
     ['seven times seven =?', '49']
 ]
 */
-let questionList =categories.javascript
-let answer = document.getElementById('answer')
-let question = document.getElementById('question')
-let questionPair
+initialize();
+let questionList = categories.javascript;
+let answer = document.getElementById("answer");
+let question = document.getElementById("question");
+let questionPair;
 
 //funcion needs argument as follows : categories.NameOfCategory
-let categoryPicker =(pickCategory)=>{
-     questionList = (pickCategory)
-     console.log(pickCategory)
-     console.log(questionList)
-}
+let categoryPicker = pickCategory => {
+  questionList = pickCategory;
+  newQuestion();
+};
 
-let newQuestion =()=> {
-    questionPair = Math.floor((Math.random() * questionList.length))
+let newQuestion = () => {
+  questionPair = Math.floor(Math.random() * questionList.length);
 
-    question.innerHTML= questionList[questionPair][0]
-    answer.innerHTML = ''
-}
+  question.innerHTML = questionList[questionPair][0];
+  answer.innerHTML = "";
+};
 
 let showAnswer = () => {
   answer.innerHTML = questionList[questionPair][1];
@@ -62,4 +85,5 @@ deleteQuestion = () => {
   newQuestion();
 };
 
-newQuestion()
+newQuestion();
+
