@@ -18,7 +18,7 @@ const questionList = [
     ['seven times seven =?', '49']
 ]
 */
-let questionList =categories.deathMetal
+let questionList =categories.javascript
 let answer = document.getElementById('answer')
 let question = document.getElementById('question')
 let questionPair
@@ -26,6 +26,8 @@ let questionPair
 //funcion needs argument as follows : categories.NameOfCategory
 let categoryPicker =(pickCategory)=>{
      questionList = (pickCategory)
+     console.log(pickCategory)
+     console.log(questionList)
 }
 
 let newQuestion =()=> {
