@@ -38,19 +38,28 @@ let newQuestion =()=> {
 }
 
 let showAnswer = () => {
-    answer.innerHTML = questionList[questionPair][1]  
-}
+  answer.innerHTML = questionList[questionPair][1];
+};
 
-let addQuestion =(submitQ,submitA) =>{
-    if (submitQ === 'add a new question here'|| submitA === 'add an answer here'){
-        alert('please put in a new question and answer')
-    }else{
-    questionList.push([submitQ,submitA])
-    console.log(questionList)
-    }
-    // console.log(subimtQ + submitA) sanitycheck
-    console.log(questionList)
- }
+let addQuestion = (submitQ, submitA) => {
+  if (
+    submitQ === "add a new question here" ||
+    submitA === "add an answer here"
+  ) {
+    alert("please put in a new question and answer");
+  } else {
+    questionList.push([submitQ, submitA]);
+    localStorage.setItem("database", JSON.stringify(categories));
+    console.log(questionList);
+  }
+  // console.log(subimtQ + submitA) sanitycheck
+  console.log(questionList);
+};
 
+deleteQuestion = () => {
+  questionList.splice(questionPair, 1);
+  localStorage.setItem("database", JSON.stringify(categories));
+  newQuestion();
+};
 
-newQuestion();  
+newQuestion()
