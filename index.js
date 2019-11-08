@@ -1,8 +1,24 @@
+const categories = {
+    javascript : [
+        ['What is an Array?', 'a collection variable used to store any kind of var in a list'],
+        ['What is an Object?', 'a collection var used to store any kind of var behind a key'],
+        ['seven times seven =?', '49']
+    ]
+    deathMetal : [
+        ['Latest album by The Crown?','Cobra Speed Venom'],
+        ['Latest album by Fleshgod Apocalypse','Veleno'],
+        ['most awesome song by Mysticum?','The Aether']
+    ]
+}
+
+/*
 const questionList = [
     ['What is an Array?', 'a collection variable used to store any kind of var in a list'],
     ['What is an Object?', 'a collection var used to store any kind of var behind a key'],
     ['seven times seven =?', '49']
 ]
+*/
+
 let answer = document.getElementById('answer')
 let question = document.getElementById('question')
 let questionPair
