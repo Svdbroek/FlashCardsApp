@@ -1,7 +1,7 @@
 const questionList = [
-    [['What is an Array?'], ['a collection variable used to store any kind of var in a list']],
-    [['What is an Object?'], ['a collection var used to store any kind of var behind a key']],
-    [['seven times seven =?'], ['49']]
+    ['What is an Array?', 'a collection variable used to store any kind of var in a list'],
+    ['What is an Object?', 'a collection var used to store any kind of var behind a key'],
+    ['seven times seven =?', '49']
 ]
 answer = ''
 
