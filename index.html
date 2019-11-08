@@ -25,7 +25,13 @@
     </form>
     </div>
     <h2 id='answer'> </h2>
-
+    <div id='submit-new-question'>
+            <form onsubmit='addQuestion(questionSubmit.value, answerSubmit.value ); return false'>
+                <textarea id='questionSubmit' rows="4" cols="50">add a new question here</textarea>
+                <textarea id='answerSubmit' rows="4" cols="50">add an answer here</textarea>
+                <button type="default">Submit question</button>
+            </form>
+    </div>
 </body>
 <script src='index.js'></script>
 
