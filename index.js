@@ -3,7 +3,7 @@ const categories = {
         ['What is an Array?', 'a collection variable used to store any kind of var in a list'],
         ['What is an Object?', 'a collection var used to store any kind of var behind a key'],
         ['seven times seven =?', '49']
-    ]
+    ] ,
     deathMetal : [
         ['Latest album by The Crown?','Cobra Speed Venom'],
         ['Latest album by Fleshgod Apocalypse','Veleno'],
@@ -18,11 +18,15 @@ const questionList = [
     ['seven times seven =?', '49']
 ]
 */
-
+let questionList =categories.deathMetal
 let answer = document.getElementById('answer')
 let question = document.getElementById('question')
 let questionPair
 
+//funcion needs argument as follows : categories.NameOfCategory
+let categoryPicker =(pickCategory)=>{
+     questionList = (pickCategory)
+}
 
 let newQuestion =()=> {
     questionPair = Math.floor((Math.random() * questionList.length))
