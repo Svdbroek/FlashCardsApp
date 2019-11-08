@@ -3,21 +3,21 @@ const questionList = [
     ['What is an Object?', 'a collection var used to store any kind of var behind a key'],
     ['seven times seven =?', '49']
 ]
-answer = ''
+let answer = document.getElementById('answer')
+let question = document.getElementById('question')
+let questionPair
 
+
+
+
+let newQuestion =()=> {
+     questionPair = Math.floor((Math.random() * questionList.length))
+
+    question.innerHTML= questionList[questionPair][0]
+    answer.innerHTML = ''
+}
 
 let showAnswer = () => {
-    document.getElementById('answer').innerHTML = answer
+    answer.innerHTML = questionList[questionPair][1]  
 }
-
-let newQuestion = () => {
-    let questionPair = Math.floor((Math.random() * questionList.length))
-
-    let question = questionList[questionPair][0]
-     answer = questionList[questionPair][1]
-
-    document.getElementById('question').innerHTML = question
-    document.getElementById('answer').innerHTML = ''
-}
-
-newQuestion();
+newQuestion();  
