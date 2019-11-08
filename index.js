@@ -85,11 +85,4 @@ deleteQuestion = () => {
   newQuestion();
 };
 
-newQuestion();
-
-
-const bject = {
-
-    key:value
-    key2:value
-}
+newQuestion()
