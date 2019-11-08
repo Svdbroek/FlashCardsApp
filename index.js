@@ -85,4 +85,4 @@ deleteQuestion = () => {
   newQuestion();
 };
 
-newQuestion()
+newQuestion();
